@@ -21,7 +21,9 @@ class App extends Component {
             .then(res => {
                 this.setState({
                     dataSeluruhSurat: res.data.hasil
-                }, console.log(res.data.hasil, 'berhasil fetch api'))
+                }, () => {
+                    console.log(this.state.dataSeluruhSurat, 'berhasil fetch api')
+                })
             }).catch(err => console.log(err, 'failed to fetch api'))
     }
 

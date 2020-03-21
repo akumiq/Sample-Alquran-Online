@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchBar from '../searchBar'
 
 const Content = (props) => {
     return (
@@ -7,6 +8,8 @@ const Content = (props) => {
             style={{ background: 'rgb(179, 224, 230)' }}>
             <div
                 className='container-fluid'>
+                <SearchBar />
+
                 <h1
                     style={{ color: '#4a7c94' }}>
                     Daftar Surat
@@ -21,7 +24,7 @@ const Content = (props) => {
                                 key={index}>
                                 <div
                                     className="col-12 bg-white text-dark p-2 rounded shadow-lg"
-                                    style={{ minHeight: '200px' }}>
+                                    style={{ minHeight: '220px' }}>
                                     <h2>{item.asma}</h2>
                                     <p>{item.nama}</p>
                                     <p>{item.arti}</p>
