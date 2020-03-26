@@ -13,7 +13,7 @@ const SearchBar = (props) => {
                     aria-label="Search"
                     onChange={props.onHandleInput}
                     value={props.inputSearchValue}
-                    style={{ width: '50rem', height: '3rem' }}>
+                    style={{ width: '40rem', height: '3rem' }}>
                 </input>
             </div>
         </div>

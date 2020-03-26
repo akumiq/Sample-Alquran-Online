@@ -20,17 +20,16 @@ const Content = (props) => {
                                 searchValue={props.searchValue}
                             />
 
-                            <h3
-                                className="text-light p-3"
+                            <h2
+                                className="p-3"
                                 style={{ color: '#4a7c94' }}>
                                 Daftar Surat
-                            </h3>
+                            </h2>
 
                             {/* list surat */}
                             <ListSurat
                                 dataSeluruhSurat={props.dataSeluruhSurat}
                                 dataKeseluruhan={props.dataKeseluruhan}
-                                bacaSurat={props.bacaSurat}
                             />
 
                         </div>

@@ -13,13 +13,12 @@ const ListSurat = (props) => {
 
                             <div
                                 className="col-12 bg-white text-dark p-2 rounded shadow-lg"
-                                style={{ minHeight: '200px' }}>
+                                style={{ minHeight: '215px' }}>
                                 <h2>{item.asma}</h2>
                                 <p>{item.nama}</p>
                                 <p>{item.arti}</p>
                                 <button
-                                    className="btn btn-default btn-success"
-                                    onClick={() => props.bacaSurat()}>
+                                    className="btn btn-default btn-success">
                                     Baca Surat
                                 </button>
                             </div>
@@ -39,8 +38,7 @@ const ListSurat = (props) => {
                                     <p>{item.nama}</p>
                                     <p>{item.arti}</p>
                                     <button
-                                        className="btn btn-default btn-success"
-                                        onClick={() => props.bacaSurat()}>
+                                        className="btn btn-default btn-success">
                                         Baca Surat
                                     </button>
                                 </div>

@@ -54,11 +54,6 @@ class App extends Component {
         })
     }
 
-    // function tombol baca surat
-    bacaSurat = () => {
-        console.log('tombol baca surat')
-    }
-
     render() {
         const {
             dataSeluruhSurat,
@@ -68,8 +63,7 @@ class App extends Component {
         } = this.state
 
         const {
-            onHandleInput,
-            bacaSurat
+            onHandleInput
         } = this
 
         return (
@@ -85,7 +79,6 @@ class App extends Component {
                     inputSearchValue={inputSearchValue}
                     dataKeseluruhan={newDataSearch}
                     isiSurat={isiSurat}
-                    bacaSurat={bacaSurat}
                 />
 
             </div>
