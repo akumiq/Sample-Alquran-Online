@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchBar from '../searchBar'
+import ListSurat from './listSurat'
 
 const Content = (props) => {
     return (
@@ -8,38 +9,34 @@ const Content = (props) => {
             style={{ background: 'rgb(179, 224, 230)' }}>
             <div
                 className='container-fluid'>
-                <SearchBar 
-                    onHandleInput={props.onHandleInput}
-                    inputSearchValue={props.inputSearchValue}
-                />
 
-                <h1
-                    style={{ color: '#4a7c94' }}>
-                    Daftar Surat
-                </h1>
+                {
+                    props.dataSeluruhSurat && !props.isiSurat
+                        ? <div>
 
-                <div
-                    className='row justify-content-center'>
-                    {
-                        props.dataSeluruhSurat.map((item, index) => (
-                            <div
-                                className="col-md-4 col-6 col-lg-3 my-3"
-                                key={index}>
-                                <div
-                                    className="col-12 bg-white text-dark p-2 rounded shadow-lg"
-                                    style={{ minHeight: '220px' }}>
-                                    <h2>{item.asma}</h2>
-                                    <p>{item.nama}</p>
-                                    <p>{item.arti}</p>
-                                    <button
-                                        className="btn btn-default btn-success">
-                                        Baca Surat
-                                    </button>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
+                            {/*component search bar*/}
+                            <SearchBar
+                                onHandleInput={props.onHandleInput}
+                                searchValue={props.searchValue}
+                            />
+
+                            <h3
+                                className="text-light p-3"
+                                style={{ color: '#4a7c94' }}>
+                                Daftar Surat
+                            </h3>
+
+                            {/* list surat */}
+                            <ListSurat
+                                dataSeluruhSurat={props.dataSeluruhSurat}
+                                dataKeseluruhan={props.dataKeseluruhan}
+                                bacaSurat={props.bacaSurat}
+                            />
+
+                        </div>
+                        : null
+                }
+
             </div>
         </div>
     )

@@ -7,17 +7,24 @@ import Content from './component/content';
 class App extends Component {
     constructor(props) {
         super(props)
+
         this.state = {
             dataSeluruhSurat: [],
             inputSearchValue: "",
-            newDataSearch: null
+            newDataSearch: null,
+            isiSurat: null
         }
+
     }
 
     componentDidMount() {
+
+        // render function getDataSurat
         this.getDataSeluruhSurat()
+
     }
 
+    // get API seluruh data surat
     getDataSeluruhSurat = () => {
         axios.get(`https://api.banghasan.com/quran/format/json/surat`)
             .then(res => {
@@ -32,6 +39,7 @@ class App extends Component {
     onHandleInput = (event) => {
         this.setState({
             inputSearchValue: event.target.value,
+            isiSurat: null
         }, () => {
             if (this.state.dataSeluruhSurat) {
                 const searchSurat = this.state.dataSeluruhSurat.filter((item) => {
@@ -46,7 +54,24 @@ class App extends Component {
         })
     }
 
+    // function tombol baca surat
+    bacaSurat = () => {
+        console.log('tombol baca surat')
+    }
+
     render() {
+        const {
+            dataSeluruhSurat,
+            inputSearchValue,
+            newDataSearch,
+            isiSurat
+        } = this.state
+
+        const {
+            onHandleInput,
+            bacaSurat
+        } = this
+
         return (
             <div className='App'>
 
@@ -55,10 +80,12 @@ class App extends Component {
 
                 {/* component content */}
                 <Content
-                    dataSeluruhSurat={this.state.dataSeluruhSurat}
-                    onHandleInput={this.onHandleInput}
-                    inputSearchValue={this.state.inputSearchValue}
-                    dataKeseluruhan={this.state.newDataSearch}
+                    dataSeluruhSurat={dataSeluruhSurat}
+                    onHandleInput={onHandleInput}
+                    inputSearchValue={inputSearchValue}
+                    dataKeseluruhan={newDataSearch}
+                    isiSurat={isiSurat}
+                    bacaSurat={bacaSurat}
                 />
 
             </div>
