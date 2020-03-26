@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SearchBar = () => {
+const SearchBar = (props) => {
     return (
         <div
             className='container'>
@@ -10,7 +10,9 @@ const SearchBar = () => {
                     className="form-control mr-sm-2 text"
                     type="search"
                     placeholder="Cari Surat"
-                    aria-label="Cari Surat"
+                    aria-label="Search"
+                    onChange={props.onHandleInput}
+                    value={props.inputSearchValue}
                     style={{ width: '50rem', height: '3rem' }}>
                 </input>
             </div>

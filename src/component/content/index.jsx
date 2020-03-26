@@ -8,7 +8,10 @@ const Content = (props) => {
             style={{ background: 'rgb(179, 224, 230)' }}>
             <div
                 className='container-fluid'>
-                <SearchBar />
+                <SearchBar 
+                    onHandleInput={props.onHandleInput}
+                    inputSearchValue={props.inputSearchValue}
+                />
 
                 <h1
                     style={{ color: '#4a7c94' }}>
