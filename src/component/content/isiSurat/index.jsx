@@ -32,7 +32,8 @@ const IsiSurat = (props) => {
                 className="pt-3">
                 <button
                     className="btn btn-default btn-info"
-                    style={{ color: 'rgb(179, 224, 230)' }}>
+                    style={{ color: 'rgb(179, 224, 230)' }}
+                    onClick={() => props.backHome()}>
                     Back Home
                 </button>
             </div>

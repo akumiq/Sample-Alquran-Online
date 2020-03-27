@@ -39,6 +39,7 @@ const Content = (props) => {
                             ? <IsiSurat
                                 isiSurat={props.isiSurat}
                                 namaSurat={props.namaSurat}
+                                backHome={props.backHome}
                             />
                             : null
                 }

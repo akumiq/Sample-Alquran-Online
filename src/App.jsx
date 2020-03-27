@@ -67,6 +67,13 @@ class App extends Component {
         })
     }
 
+    backHome = () => {
+        this.setState({
+            isiSurat: null,
+            newDataSearch: null
+        })
+    }
+
     render() {
         const {
             dataSeluruhSurat,
@@ -78,7 +85,8 @@ class App extends Component {
 
         const {
             onHandleInput,
-            bacaSurat
+            bacaSurat,
+            backHome
         } = this
 
         return (
@@ -96,6 +104,7 @@ class App extends Component {
                     isiSurat={isiSurat}
                     bacaSurat={bacaSurat}
                     namaSurat={namaSurat}
+                    backHome={backHome}
                 />
 
             </div>
