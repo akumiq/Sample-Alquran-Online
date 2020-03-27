@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchBar from '../searchBar'
 import ListSurat from './listSurat'
+import IsiSurat from './isiSurat'
 
 const Content = (props) => {
     return (
@@ -30,10 +31,16 @@ const Content = (props) => {
                             <ListSurat
                                 dataSeluruhSurat={props.dataSeluruhSurat}
                                 dataKeseluruhan={props.dataKeseluruhan}
+                                bacaSurat={props.bacaSurat}
                             />
 
                         </div>
-                        : null
+                        : props.isiSurat
+                            ? <IsiSurat
+                                isiSurat={props.isiSurat}
+                                namaSurat={props.namaSurat}
+                            />
+                            : null
                 }
 
             </div>

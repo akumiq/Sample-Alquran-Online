@@ -18,7 +18,8 @@ const ListSurat = (props) => {
                                 <p>{item.nama}</p>
                                 <p>{item.arti}</p>
                                 <button
-                                    className="btn btn-default btn-success">
+                                    className="btn btn-default btn-info"
+                                    onClick={() => props.bacaSurat(item.nomor, item.nama)}>
                                     Baca Surat
                                 </button>
                             </div>
@@ -38,7 +39,8 @@ const ListSurat = (props) => {
                                     <p>{item.nama}</p>
                                     <p>{item.arti}</p>
                                     <button
-                                        className="btn btn-default btn-success">
+                                        className="btn btn-default btn-success"
+                                        onClick={() => props.bacaSurat(item.nomor, item.nama)}>
                                         Baca Surat
                                     </button>
                                 </div>

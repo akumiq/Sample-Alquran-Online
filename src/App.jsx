@@ -12,7 +12,8 @@ class App extends Component {
             dataSeluruhSurat: [],
             inputSearchValue: "",
             newDataSearch: null,
-            isiSurat: null
+            isiSurat: null,
+            namaSurat: ""
         }
 
     }
@@ -54,16 +55,30 @@ class App extends Component {
         })
     }
 
+    bacaSurat = (nomor, namaSurat) => {
+        axios.get(`https://api.banghasan.com/quran/format/json/surat/${nomor}/ayat/1-10`).then(result => {
+            console.log(result.data.ayat.data.ar)
+
+            this.setState({
+                isiSurat: result.data.ayat.data.ar,
+                namaSurat: namaSurat,
+                inputSearchValue: ''
+            })
+        })
+    }
+
     render() {
         const {
             dataSeluruhSurat,
             inputSearchValue,
             newDataSearch,
-            isiSurat
+            isiSurat,
+            namaSurat
         } = this.state
 
         const {
-            onHandleInput
+            onHandleInput,
+            bacaSurat
         } = this
 
         return (
@@ -79,6 +94,8 @@ class App extends Component {
                     inputSearchValue={inputSearchValue}
                     dataKeseluruhan={newDataSearch}
                     isiSurat={isiSurat}
+                    bacaSurat={bacaSurat}
+                    namaSurat={namaSurat}
                 />
 
             </div>
